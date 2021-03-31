@@ -1,28 +1,33 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Windows.Controls;
+using System.Windows.Documents;
 
 namespace Savanna
 {
-    [Serializable]
-    public class MainVM : MainWindow
+    public class MainVM 
     {
+        public string[] TypeOfSearch { get; set; }
+
         ContactsDB contactsDB;
+        public List ListViewItem { get; set; }
+
         public MainVM()
         {
-            //ComboBox.Items.Add("убирай");
-            ContactsDB contactsDB = new ContactsDB();
-            // 2) заполнение выпадющего списка (combobox) не сделано
+            contactsDB = new ContactsDB();
+            TypeOfSearch = new string[] { "По имени", "По телефону" };
         }
+
         public void ShowContacts(List<Contact> contacts)
+
         {
-            contacts.Clear();//1
-            List<Contact> list = new List<Contact>();//криво 2 
+            contacts.Clear();
+            List<Contact> list = new List<Contact>();
             for (int i = 0; i < list.Count; i++)
             {
                 Contact contact = (Contact)list[i];
                 contacts.Add(contact);
-
             }
 
         }

@@ -23,6 +23,7 @@ namespace Savanna
         public MainWindow()
         {
             InitializeComponent();
+            DataContext = new MainVM();
         }
     }
 }
